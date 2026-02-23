@@ -96,7 +96,8 @@ class WorkoutSessionScreen extends StatelessWidget {
               // --- 3. EJERCICIO 1: JALÓN AL PECHO ---
               const ExerciseSection(
                 exerciseName: "Jalon al pecho (Maquina)",
-                imageUrl: "https://github.com/alexcancinofernandez/Auraapp2_ACF_0517/blob/main/jalon.jpg?raw=true", // Imagen web representativa
+                // FIX: Changed GitHub 'blob' URL to a raw.githubusercontent.com URL for reliable image loading.
+                imageUrl: "https://raw.githubusercontent.com/alexcancinofernandez/Auraapp2_ACF_0517/main/jalon.jpg", // Imagen web representativa
                 startWeight: 100,
               ),
 
@@ -108,7 +109,8 @@ class WorkoutSessionScreen extends StatelessWidget {
               // Reutilizamos el mismo widget pero cambiamos los datos
               const ExerciseSection(
                 exerciseName: "Remo sentado en Maquina",
-                imageUrl: "https://github.com/alexcancinofernandez/Auraapp2_ACF_0517/blob/main/remo.jpg?raw=true", // Imagen web representativa
+                // FIX: Changed GitHub 'blob' URL to a raw.githubusercontent.com URL for reliable image loading.
+                imageUrl: "https://raw.githubusercontent.com/alexcancinofernandez/Auraapp2_ACF_0517/main/remo.jpg", // Imagen web representativa
                 startWeight: 80, // Un peso diferente para variar
               ),
               
@@ -287,7 +289,8 @@ class _ExerciseSetRowState extends State<ExerciseSetRow> {
       margin: const EdgeInsets.symmetric(vertical: 4),
       padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
       decoration: BoxDecoration(
-        color: isCompleted ? Colors.green.withOpacity(0.1) : Colors.transparent, // Sutil fondo verde al completar
+        // FIX: Replaced deprecated .withOpacity(0.1) with .withAlpha((255 * 0.1).round())
+        color: isCompleted ? Colors.green.withAlpha((255 * 0.1).round()) : Colors.transparent, // Sutil fondo verde al completar
         borderRadius: BorderRadius.circular(8),
       ),
       child: Row(
